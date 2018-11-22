@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" id="meta">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>家庭计划书</title>
+    <style>
+    	.fade-enter-active,.fade-leave-active{
+      		transition: opacity .5s;
+    	}
+    	.fade-enter,.fade-leave-active{
+      		opacity: 0
+    	}
+      .loading{
+        position: fixed;width: 100%;height: 100%;left: 0;top: 0;background: #fff;z-index: 10;opacity: 1;transition: opacity 500ms;
+      }
+      .loading.hide{
+        opacity: 0;
+      }
+      .loading .rolling{
+        position: absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(0);width:30px;height:30px;border:2px solid #e0e0e0;border-right:0;border-radius: 50%;animation: roll 300ms infinite;
+      }
+      @keyframes roll{
+        0%{transform: translate(-50%,-50%) rotate(0);}
+        100%{transform: translate(-50%,-50%) rotate(360deg);}
+      }
+    </style>
+    <script>!function(e){var t=e.document,n=t.documentElement,i="orientationchange"in e?"orientationchange":"resize",a=function e(){var t=n.getBoundingClientRect().width;return n.style.fontSize=5*Math.max(Math.min(t/750*20,11.2),8.55)+"px",e}();n.setAttribute("data-dpr",e.navigator.appVersion.match(/iphone/gi)?e.devicePixelRatio:1),/iP(hone|od|ad)/.test(e.navigator.userAgent)&&(t.documentElement.classList.add("ios"),parseInt(e.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1],10)>=8&&t.documentElement.classList.add("hairline")),t.addEventListener&&(e.addEventListener(i,a,!1),t.addEventListener("DOMContentLoaded",a,!1))}(window);</script>
+    <script>
+      {
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+            handleFontSize();
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+            } else if (document.attachEvent) {
+                document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+                document.attachEvent("onWeixinJSBridgeReady", handleFontSize);  }
+        }
+        function handleFontSize() {
+            // 设置网页字体为默认大小
+            WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+            // 重写设置网页字体大小的事件
+            WeixinJSBridge.on('menu:setfont', function() {
+                WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+            });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="loading">
+      <div class="rolling"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+body{
+    .con_list{
+        background: #fff;margin-top: 1em;border:1px solid @mainGreen;border-radius: 5px;
+        ul{
+            padding:0 .5em;
+            li{position: relative;padding-left: 1.6em;
+                &.title{
+                    padding-left: 0;height: 2.5em;line-height: 2.7em;font-weight: bold;color: @black;position: relative;border-bottom: 1px solid @bgGray;
+                    span{font-size: .8em;height: 1.5em;line-height: 1.8em;background: @mainGreen;color: #fff;border-radius:2em;font-weight: normal;padding: 0 1em;position: absolute;top: 50%;right: .5em;transform:translateY(-50%);}
+                }
+                margin-bottom: .5em;
+                h3{
+                    color: @black;font-weight: bold;
+                    b{color: @mainGreen;}
+                    i{font-size: 1em;color: @mainGreen;position: absolute; top: 0;left: 0.3em;}
+                }
+                &:last-child{margin-bottom: 0;padding-bottom: .5em;}
+            }
+        }
+    }
+
+
+    .fixedcon{
+        position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,.7);top: 0;left: 0;z-index: 1000;
+    .acon{
+        left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;width:90%;position:absolute;height:80%;border-radius: 8px;
+        div{height: 93%;overflow-y:scroll;}
+        h2{
+            background:#fff;color: @mainGreen; font-size: 1.35em; height: 2.6em;  position: absolute; width: 100%;z-index:1;border-radius:8px; padding-top: .6em;
+            b{
+                
+            }
+            i{
+                position:absolute;width:2em;height:100%;background:url(../images/close.png) no-repeat center center;background-size:1em;right:.2em;top:0em;
+            }
+        }
+        ul.list{
+            color:#5c5c5c;padding-top:3.5em;
+            counter-reset: irem;
+            margin-bottom: 2em;
+            // -moz-column-count:2;  /* Firefox */
+            // -webkit-column-count:2; /* Safari 和 Chrome */
+            // column-count:2;
+            li{
+                font-size:1.1em; padding-left: 3em; position: relative;
+                &:before{
+                    position:absolute;width:2em;content: counter(irem) "."; counter-increment: irem;left: 1em;top:0;
+                }
+            }
+        }
+
+        .weakToggle{
+            width: 5em;height: 1.1em;border:1px solid @mainGreen;border-radius: 30px;z-index: 1000;overflow: hidden;float: left;display: inline-block;margin:.15em 2.5em 0 1em;
+            li{
+                font-size:.8em;display: block;width: 50%;text-align: center;background: #fff;color: @mainGreen;float: left;height: 1.4em;line-height: 1.5em;
+                &.active{
+                    background: @mainGreen;color: #fff;
+                }
+            }
+        }
+
+    }
+}
+}
